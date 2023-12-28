@@ -1,0 +1,58 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block title %}
+  Checkout
+{% endblock %}
+{% block content %}
+<div class="container-fluid px-5 mt-5 ">
+  <div class="row">
+    <h1 class="mb-4">Checkout</h1>
+    <div class="col-md-6 col-lg-6 col-xl-6">
+      <div class="card">
+        <div class="card-header align-center">
+          <a><strong>INFORMATION</strong></a>
+        </div>
+        <div class="card-body">
+          <form method="post" class="order-form" >
+            <div class="input-group px-3 my-3 mb-3">{{ form.as_p }}</div>
+          <div class="text-center mt-5">
+            <p><input type="submit" value="Place order" class="btn btn-primary"></p>
+          </div>
+            {% csrf_token %}
+          </form>
+        </div>
+        </div>
+      </div>
+
+    <div class="col-md-5 col-lg-5 col-xl-5">
+      <div class="card">
+          <div class="card-header">
+            <a><strong>ORDER SUMMARY</strong></a>
+          </div>
+         <div class="card-body">
+              {% for item in cart %}
+                {% with product=item.product %}
+           <div class="row mb-3">
+                  <div class="col-md-3 col-lg-3 col-xl-3 ">
+                    <img src="{% if product.image %}{{ product.image.url }}
+                      {% else %}{% static 'img/no_image.png' %}{% endif %}" class="img-thumbnail">
+                  </div>
+                  <div class="col-md-6 col-lg-6 col-xl-6 mt-3">
+                      {{ item.quantity }}x {{ item.product.name }}
+                  </div>
+                  <div class="col-md-3 col-lg-3 col-xl-3 text-end mt-3">
+                    ${{ item.total_price }}
+                  </div>
+           </div>
+                {% endwith %}
+              {% endfor %}
+           <div>
+              <hr>
+              <p class="text-end fw-bold">Total : ${{ cart.get_total_price }}</p>
+           </div>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
