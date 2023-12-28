@@ -1,0 +1,30 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block content %}
+<header class="masthead">
+    <div class="container px-5 text-center">
+        <div class="d-flex justify-content-center">
+            <div class="col-lg-5 col-xl-5">
+                <div class="card">
+                    <div class="card-header mb-2 mt-3 align-middle bg-white">
+                      <h3 class="font-weight-bold"><img src="{% static 'img/logo2.png' %}" alt="" width="38" height="35"> JTS</h3>
+                    </div>
+                    <div class="card-body mx-4">
+                        <p>
+                            <a class="me-5 btn btn-link" href="{% url 'accounts:login' %}">SIGN IN</a>
+                            <a class="btn btn-link text-decoration-underline">SIGN UP</a>
+                        </p>
+                        <form action="" method="POST" class="form-control border-0 mb-2">
+                            {% csrf_token %}
+                            {{ form }}
+                            <div class="text-center mt-3">
+                                <input class="form-control bg-primary text-white" type="submit" value="Sign up"/>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock  %}

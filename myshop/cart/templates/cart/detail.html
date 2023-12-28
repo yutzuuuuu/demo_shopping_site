@@ -1,0 +1,62 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block title %}
+  Your shopping cart
+{% endblock %}
+{% block content %}
+<div class="container-fluid px-5 mt-5 ">
+  <h1 class="mb-4">Your shopping cart</h1>
+  <table class="table table-bordered border-light">
+    <thead>
+      <tr class="table-primary text-center">
+        <th>Image</th>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Remove</th>
+        <th>Unit price</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in cart %}
+        {% with product=item.product %}
+          <tr class="align-middle text-center">
+            <td width="30%">
+              <a href="{{ product.get_absolute_url }}">
+                <img src="{% if product.image %}{{ product.image.url }}
+                {% else %}{% static 'img/no_image.png' %}{% endif %}" class="img-thumbnail border-white">
+              </a>
+            </td>
+            <td>{{ product.name }}</td>
+            <td>
+              <form action="{% url 'cart:cart_add' product.id %}" method="post">
+                {{ item.update_quantity_form.quantity }}
+                {{ item.update_quantity_form.update }}
+                <input class="btn btn-dark" type="submit" value="Update">
+                {% csrf_token %}
+              </form>
+            </td>
+            <td>
+              <form action="{% url 'cart:cart_remove' product.id %}" method="post">
+                <input class="btn btn-dark" type="submit" value="Remove">
+                {% csrf_token %}
+              </form>
+            </td>
+            <td class="num">${{ item.price }}</td>
+            <td class="num">${{ item.total_price }}</td>
+          </tr>
+        {% endwith %}
+      {% endfor %}
+      <tr class="total text-center">
+        <td><strong>Total</strong></td>
+        <td colspan="4"></td>
+        <td class="num"><strong>${{ cart.get_total_price }}</strong></td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="text-center">
+    <a href="{% url 'shop:product_list' %}" class="btn btn-outline-primary me-3">Continue</a>
+    <a href="{% url 'orders:order_create' %}" class="btn btn-primary">Checkout</a>
+  </p>
+</div>
+{% endblock %}

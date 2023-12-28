@@ -1,0 +1,38 @@
+{% extends "shop/base.html" %}
+{% load socialaccount %}
+{% providers_media_js %}
+{% load static %}
+{% block content %}
+<header class="masthead">
+    <div class="container px-5 text-center">
+        <div class="d-flex justify-content-center">
+            <div class="col-md-5 col-lg-5 col-xl-5">
+                <div class="card">
+                    <div class="card-header mb-2 mt-3 align-middle bg-white">
+                      <h3 class="font-weight-bold"><img src="{% static 'img/logo2.png' %}" alt="" width="38" height="35"> JTS</h3>
+                    </div>
+                    <div class="card-body mx-4">
+                        <p>
+                            <a class="me-5 btn btn-link text-decoration-underline">SIGN IN</a>
+                            <a class="btn btn-link" href="{% url 'accounts:register' %}">SIGN UP</a>
+                        </p>
+                        <form action="" method="POST" class="form-control border-0 mb-2">
+                            {% csrf_token %}
+                            {{ form }}
+                        <div class="text-center mt-3">
+                            <input class="form-control bg-primary text-white mb-3" type="submit" value="Sign in"/>
+                        </div>
+                        </form>
+                        <div class="line"><span class="text">or</span></div>
+                        <div class="mt-3 mb-3">
+                            <a class="me-3" href="{% provider_login_url 'google' method='oauth2' %}"><img src="{% static 'img/google.png' %}" alt="" width="65" height="65"></a>
+                            <a class="me-3" href="{% provider_login_url 'github' method='oauth2' %}"><img src="{% static 'img/github.png' %}" alt="" width="55" height="55"></a>
+                            <a href="{% provider_login_url 'facebook' method='js_sdk' %}"><img src="{% static 'img/facebook.png' %}" alt="" width="62" height="62"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock  %}
