@@ -16,9 +16,9 @@
   - Checkout
     ![image](https://github.com/yutzuuuuu/demo_shopping_site/blob/main/myshop/shop/static/img/checkout.png)
   - Account
-    <img src="https://github.com/yutzuuuuu/demo_shopping_site/blob/main/myshop/shop/static/img/account.png" height="600">
+    <img src="https://github.com/yutzuuuuu/demo_shopping_site/blob/main/myshop/shop/static/img/account.png" height="400">
   - Third-Party login
     <img src="https://github.com/yutzuuuuu/demo_shopping_site/blob/main/myshop/shop/static/img/third_party.png"       
-      height="600">
+      height="500">
   - Confirm order
     ![image](https://github.com/yutzuuuuu/demo_shopping_site/blob/main/myshop/shop/static/img/confirm.png)
