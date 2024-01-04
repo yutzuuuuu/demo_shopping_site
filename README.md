@@ -5,5 +5,12 @@
   - Send order confirmation to customers while placing orders (Celery + Redis).
   - Support third-party login via Facebook, Google, and Github.
 - ### Images
-  - homepage
-     
+  - Homepage
+    ![image](https://github.com/yutzuuuuu/demo_shopping_site/blob/main/myshop/shop/static/img/homepage.png)
+  - Products
+  - Product Details
+  - Cart
+  - Checkout
+  - Account
+  - Third-Party login
+  - Confirm order
