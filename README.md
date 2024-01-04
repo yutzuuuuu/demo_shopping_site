@@ -4,3 +4,6 @@
   - Add products to the shopping cart and update product quantity (recorded by session).
   - Send order confirmation to customers while placing orders (Celery + Redis).
   - Support third-party login via Facebook, Google, and Github.
+- ### Images
+  - homepage
+     
