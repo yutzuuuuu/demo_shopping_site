@@ -6,8 +6,9 @@
   - Support third-party login via Facebook, Google, and Github.
 - ### Images
   - Homepage
-    ![image](https://github.com/yutzuuuuu/demo_shopping_site/blob/main/myshop/shop/static/img/homepage.png)
+  - ![image](https://github.com/yutzuuuuu/demo_shopping_site/blob/main/myshop/shop/static/img/homepage.png)
   - Products
+  - 
   - Product Details
   - Cart
   - Checkout
