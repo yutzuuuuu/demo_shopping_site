@@ -17,10 +17,10 @@
     ![image](https://github.com/yutzuuuuu/demo_shopping_site/blob/main/myshop/shop/static/img/checkout.png)
   - Account
     
-    <img src="https://github.com/yutzuuuuu/demo_shopping_site/blob/main/myshop/shop/static/img/account.png" height="400">
-  - Third-Party login
+    <div align=center><img src="https://github.com/yutzuuuuu/demo_shopping_site/blob/main/myshop/shop/static/img/account.png" height="400"></div>
+  - Third-Party login(Google)
     
-    <img src="https://github.com/yutzuuuuu/demo_shopping_site/blob/main/myshop/shop/static/img/third_party.png"       
-      height="500">
+    <div align=center><img src="https://github.com/yutzuuuuu/demo_shopping_site/blob/main/myshop/shop/static/img/third_party.png"       
+      height="500"></div>
   - Confirm order
     ![image](https://github.com/yutzuuuuu/demo_shopping_site/blob/main/myshop/shop/static/img/confirm.png)
